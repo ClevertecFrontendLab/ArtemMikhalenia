@@ -1,0 +1,79 @@
+.footer-content{
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding: 0px 24px 41px;
+}
+
+.ant-btn.ant-btn-link.footer-link-btn{
+  padding: 10px 15px;
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  text-align: center;
+
+  color: rgba(47, 84, 235, 1);
+}
+
+.ant-btn.ant-btn-link.footer-btn{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 130%;
+  text-align: center;
+
+  color: rgba(38, 38, 38, 1);
+}
+
+.ant-card.ant-card-bordered.card-download{
+  max-width: 240px;
+  width: 100%;
+
+  padding: 0;
+  margin: 0;
+}
+
+.ant-btn.ant-btn-link.card-download-link{
+  display: block;
+  margin: 12px 0px 8px 24px;
+  padding: 0;
+  
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  text-align: left;
+
+  color: rgba(47, 84, 235, 1);
+}
+
+.card-download-subtitle{
+  margin: 0px 0px 12px 24px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 130%;
+  text-align: left;
+
+  color: rgba(140, 140, 140, 1);
+}
+
+.card-download-actions{
+  padding: 12px 0px;
+  display: flex;
+  justify-content: center;
+
+  border-top: 1px solid rgba(240, 240, 240, 1);
+  
+}
+
+.ant-btn.ant-btn-link.footer-btn.android,
+.ant-btn.ant-btn-link.footer-btn.ios{
+  padding: 4px 15px;
+  margin: 0;
+}
+
+.anticon.anticon-android,
+.anticon.anticon-apple{
+  margin-right: 9px;
+}
