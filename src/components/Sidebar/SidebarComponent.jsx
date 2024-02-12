@@ -15,20 +15,28 @@ import React, { useState } from 'react';
 export default function SidebarComponent() {
     const [collapsed, setCollapsed] = useState(false);
 
-    // function getItem(key, icon, label) {
-    //     return {
-    //         key,
-    //         icon,
-    //         label,
-    //     };
-    // }
-
-    // const items = [
-    //     getItem('1', <CalendarTwoTone twoToneColor={['#061178', '#061178']} />, 'Календарь'),
-    //     getItem('2', <HeartFilled />, 'Тренировки'),
-    //     getItem('3', <TrophyFilled />, 'Достижения'),
-    //     getItem('4', <IdcardTwoTone twoToneColor={['#061178', 'none', '#061178']} />, 'Профиль'),
-    // ];
+    const menuItems = [
+        {
+            key: '1',
+            icon: <CalendarTwoTone twoToneColor={['#061178', '#061178']} />,
+            label: 'Календарь',
+        },
+        {
+            key: '2',
+            icon: <HeartFilled />,
+            label: 'Тренировки',
+        },
+        {
+            key: '3',
+            icon: <TrophyFilled />,
+            label: 'Достижения',
+        },
+        {
+            key: '4',
+            icon: <IdcardTwoTone twoToneColor={['#061178', 'none', '#061178']} />,
+            label: 'Профиль',
+        },
+    ];
 
     return (
         <Sider
@@ -48,28 +56,10 @@ export default function SidebarComponent() {
                     mode='inline'
                     defaultSelectedKeys={['1']}
                     inlineIndent={0}
-                    items={[
-                        {
-                            key: '1',
-                            icon: <CalendarTwoTone />,
-                            label: 'Календарь',
-                        },
-                        {
-                            key: '2',
-                            icon: <HeartFilled />,
-                            label: 'Тренировки',
-                        },
-                        {
-                            key: '3',
-                            icon: <TrophyFilled />,
-                            label: 'Достижения',
-                        },
-                        {
-                            key: '4',
-                            icon: <TrophyFilled />,
-                            label: 'Профиль',
-                        },
-                    ]}
+                    items={menuItems.map((item) => ({
+                        ...item,
+                        label: <span className='opacity-block' style={{ opacity: collapsed ? 0 : 1 }}>{item.label}</span>,
+                    }))}
                 />
             </nav>
             <div className='trigger-block'>
