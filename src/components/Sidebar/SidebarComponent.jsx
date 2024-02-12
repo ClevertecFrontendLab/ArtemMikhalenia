@@ -1,6 +1,8 @@
 import { Layout, Menu, Button } from 'antd';
 const { Sider } = Layout;
 import {
+    MenuFoldOutlined,
+    MenuUnfoldOutlined,
     CalendarTwoTone,
     HeartFilled,
     TrophyFilled,
@@ -8,12 +10,35 @@ import {
     IdcardTwoTone,
 } from '@ant-design/icons';
 import './Sidebar.css';
-import MenuItem from './MenuItem';
-import { navItems } from '../../data';
+import React, { useState } from 'react';
 
 export default function SidebarComponent() {
+    const [collapsed, setCollapsed] = useState(false);
+
+    // function getItem(key, icon, label) {
+    //     return {
+    //         key,
+    //         icon,
+    //         label,
+    //     };
+    // }
+
+    // const items = [
+    //     getItem('1', <CalendarTwoTone twoToneColor={['#061178', '#061178']} />, 'Календарь'),
+    //     getItem('2', <HeartFilled />, 'Тренировки'),
+    //     getItem('3', <TrophyFilled />, 'Достижения'),
+    //     getItem('4', <IdcardTwoTone twoToneColor={['#061178', 'none', '#061178']} />, 'Профиль'),
+    // ];
+
     return (
-        <Sider width={208}>
+        <Sider
+            // breakpoint='lg'
+            collapsedWidth='64'
+            width={208}
+            trigger={null}
+            collapsible
+            collapsed={collapsed}
+        >
             <div className='sidebar-logo'>
                 <img src='./src/assets/Logo.svg' alt='Logo' />
             </div>
@@ -26,7 +51,7 @@ export default function SidebarComponent() {
                     items={[
                         {
                             key: '1',
-                            icon: <CalendarTwoTone twoToneColor={['#061178', '#061178']} />,
+                            icon: <CalendarTwoTone />,
                             label: 'Календарь',
                         },
                         {
@@ -41,12 +66,18 @@ export default function SidebarComponent() {
                         },
                         {
                             key: '4',
-                            icon: <IdcardTwoTone twoToneColor={['#061178', 'none', '#061178']} />,
+                            icon: <TrophyFilled />,
                             label: 'Профиль',
                         },
                     ]}
                 />
             </nav>
+            <div className='trigger-block'>
+                {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+                    className: 'trigger',
+                    onClick: () => setCollapsed(!collapsed),
+                })}
+            </div>
             <div className='exit-block'>
                 <img src='./src/assets/Exit.svg' alt='exit' />
                 <Button type='link'>Выход</Button>

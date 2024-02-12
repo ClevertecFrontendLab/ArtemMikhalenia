@@ -9,18 +9,18 @@ import { cardText } from '../../data';
 import { Card, Layout } from 'antd';
 import classNames from 'classnames';
 
-const MainPage = () => (
-    <>
-        <Layout>
-            <SidebarComponent />
-            <Layout className='mainblock-body'>
-                <HeaderComponent />
-                <div className='mainblock-background'>
+const MainPage = () => {
+    return (
+        <>
+            <Layout>
+                <SidebarComponent />
+                <Layout className='mainblock-body'>
+                    <HeaderComponent />
                     <ContentComponent />
                     <FooterComponent />
-                </div>
+                </Layout>
             </Layout>
-        </Layout>
-    </>
-);
+        </>
+    );
+};
 export default MainPage;

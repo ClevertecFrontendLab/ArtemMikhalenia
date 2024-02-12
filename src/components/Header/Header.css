@@ -1,7 +1,5 @@
 .ant-page-header.site-page-header.has-breadcrumb.ant-page-header-ghost{
-  /* position: fixed; */
-  padding: 16px 24px;
-  /* width: 100%; */
+  padding: 16px 40px 20px 24px;
 
   font-size: 38px;
   font-weight: 700;
@@ -26,6 +24,10 @@
 
   color: rgba(38, 38, 38,1);
 
+  @media (max-width: 1024px){
+    font-size: 24px;
+    font-weight: 500;
+  }
 }
 
 .ant-breadcrumb{
@@ -46,7 +48,6 @@ color: rgba(38, 38, 38,1);
 .ant-page-header-heading{
   display: flex;
   justify-content: space-between;
-  /* margin-right: 30px; */
 }
 
 .ant-page-header-heading-extra .ant-btn.ant-btn-primary{
@@ -67,14 +68,15 @@ color: rgba(38, 38, 38,1);
 }
 
 .ant-page-header-heading-extra .ant-btn.ant-btn-primary::before{
- content: "";
- position: absolute;
- width: 14px;
- height: 14px;
- top: 4px;
- left: 0;
- background-image: url("./src/assets/Settings-icon.svg");
- background-repeat: no-repeat;
- background-position: center;
- background-size: contain;
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 4px;
+  left: 0;
+
+  background-image: url("./src/assets/Settings-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }

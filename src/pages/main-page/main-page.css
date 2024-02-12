@@ -1,15 +1,25 @@
-.mainblock-body{
-  height: 100%;
-  margin: 0px 0px 0px 208px;
-}
-
-.mainblock-background{
-
-  /* display: flex;
-  flex-direction: column; */
+.ant-layout.ant-layout-has-sider{
+  display: flex;
+  flex-direction: row;
+  min-height: 0;
+  flex:auto;
 
   background-image: url("/src/assets/images/mainblock/background/Main-page_light.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+/*---------------------------------------------*/
+
+/* #root {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.sidebar{
+  color: blue
+} */
