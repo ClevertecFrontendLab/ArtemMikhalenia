@@ -48,7 +48,11 @@ export default function SidebarComponent() {
             collapsed={collapsed}
         >
             <div className='sidebar-logo'>
-                <img src='./src/assets/Logo.svg' alt='Logo' className={collapsed ? "logo-image-collapsed" : "logo-image-not-collapsed"} />
+                <img
+                    src='./src/assets/Logo.svg'
+                    alt='Logo'
+                    className={collapsed ? 'logo-image-collapsed' : 'logo-image-not-collapsed'}
+                />
             </div>
             <nav className='sidebar-nav'>
                 <Menu
@@ -58,7 +62,11 @@ export default function SidebarComponent() {
                     inlineIndent={0}
                     items={menuItems.map((item) => ({
                         ...item,
-                        label: <span className='opacity-block' style={{ opacity: collapsed ? 0 : 1 }}>{item.label}</span>,
+                        label: (
+                            <span className='opacity-block' style={{ opacity: collapsed ? 0 : 1 }}>
+                                {item.label}
+                            </span>
+                        ),
                     }))}
                 />
             </nav>
@@ -69,8 +77,14 @@ export default function SidebarComponent() {
                 })}
             </div>
             <div className='exit-block'>
-                <img src='./src/assets/Exit.svg' alt='exit' />
-                <Button type='link'>Выход</Button>
+                <Button type='link' className='exit-block-btn opacity-block'>
+                    <img
+                        src='./src/assets/Exit.svg'
+                        alt='exit'
+                        className={collapsed ? 'exit-icon-collapsed' : 'exit-icon-not-collapsed'}
+                    />
+                    <span className='exit-block-btn-text' style={{ opacity: collapsed ? 0 : 1 }}>Выход</span>
+                </Button>
             </div>
         </Sider>
     );
