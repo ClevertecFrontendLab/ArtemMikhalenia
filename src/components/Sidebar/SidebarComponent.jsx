@@ -48,7 +48,7 @@ export default function SidebarComponent() {
             collapsed={collapsed}
         >
             <div className='sidebar-logo'>
-                <img src='./src/assets/Logo.svg' alt='Logo' />
+                <img src='./src/assets/Logo.svg' alt='Logo' className={collapsed ? "logo-image-collapsed" : "logo-image-not-collapsed"} />
             </div>
             <nav className='sidebar-nav'>
                 <Menu
