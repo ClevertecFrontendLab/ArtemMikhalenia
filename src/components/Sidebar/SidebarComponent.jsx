@@ -40,12 +40,13 @@ export default function SidebarComponent() {
 
     return (
         <Sider
-            // breakpoint='lg'
+            breakpoint='m'
             collapsedWidth='64'
             width={208}
             trigger={null}
             collapsible
             collapsed={collapsed}
+            data-test-id={collapsed ? 'sider-switch' : 'sider-switch-mobile'}
         >
             <div className='sidebar-logo'>
                 <img
@@ -74,6 +75,7 @@ export default function SidebarComponent() {
                 {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                     className: 'trigger',
                     onClick: () => setCollapsed(!collapsed),
+                    'data-test-id': collapsed ? 'sider-switch' : 'sider-switch-mobile',
                 })}
             </div>
             <div className='exit-block'>
@@ -83,7 +85,9 @@ export default function SidebarComponent() {
                         alt='exit'
                         className={collapsed ? 'exit-icon-collapsed' : 'exit-icon-not-collapsed'}
                     />
-                    <span className='exit-block-btn-text' style={{ opacity: collapsed ? 0 : 1 }}>Выход</span>
+                    <span className='exit-block-btn-text' style={{ opacity: collapsed ? 0 : 1 }}>
+                        Выход
+                    </span>
                 </Button>
             </div>
         </Sider>

@@ -1,7 +1,6 @@
 import { Card, Button } from 'antd';
 import { CalendarTwoTone, HeartFilled, TrophyFilled, IdcardOutlined } from '@ant-design/icons';
 import { cardAction } from '../../data';
-import './CardAction.css';
 
 export const ProfileSvgBLue = () => (
     <svg width='14.000000' height='14.000000' viewBox='0 0 14 14' fill='none'>
