@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <>
-            <Container w='100%' bg='#ffffd3' as='header' data-test-id='header'>
+            <Container w='100%' bg='#ffffd3'>
                 <Box className='header-content' sx={headerStyles}>
                     <Flex justify='space-between' align='center'>
                         <Box marginRight='128px'>

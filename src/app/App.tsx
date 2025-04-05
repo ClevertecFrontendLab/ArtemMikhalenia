@@ -1,6 +1,6 @@
 import './App.css';
 
-import HomePage from '~/pages/HomePage';
+import RootLayout from '~/layouts/RootLayout';
 import { useGetPostsQuery } from '~/query/services/posts.ts';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
     return (
         <>
-            <HomePage />
+            <RootLayout />
         </>
     );
 }
