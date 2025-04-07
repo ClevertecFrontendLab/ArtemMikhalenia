@@ -2,6 +2,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 
 const Breadcrumbs = () => {
     const breadcrumbStyles = {
+        fontFamily: 'Inter',
         fontWeight: 400,
         fontSize: '16px',
         lineHeight: '150%',

@@ -9,6 +9,7 @@ const Footer = () => {
     };
 
     const buttonStyles = {
+        height: '16px',
         border: 'none',
         bg: 'none',
         justifyContent: 'start',
@@ -19,7 +20,7 @@ const Footer = () => {
 
     return (
         <>
-            <Container as='footer' w='100%'>
+            <Container as='footer' w='100%' fontFamily='Inter' p={0} m={0}>
                 <Stack className='footer-content' sx={footerStyles}>
                     <Text
                         marginBottom='16px'
@@ -40,8 +41,8 @@ const Footer = () => {
                     >
                         Все права защищены, ученический файл, ©Клевер Технолоджи, 2025
                     </Text>
-                    <Button sx={buttonStyles}>
-                        <BiLogOut />
+                    <Button sx={buttonStyles} p={0} m={0}>
+                        <BiLogOut size='12px' />
                         <Text
                             sx={{
                                 fontFamily: 'Inter',

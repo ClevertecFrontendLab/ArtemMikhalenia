@@ -43,7 +43,12 @@ const Navbar = () => {
                 sx={{ overflowY: 'scroll', scrollbarWidth: 'none' }}
             >
                 {navbarData.map((item, index) => (
-                    <AccordionItem key={index}>
+                    <AccordionItem
+                        key={index}
+                        style={{
+                            border: 'none',
+                        }}
+                    >
                         {({ isExpanded }) => (
                             <>
                                 <h2
@@ -53,12 +58,13 @@ const Navbar = () => {
                                     }}
                                 >
                                     <AccordionButton
+                                        _hover={{ bg: '#eaffc7' }}
                                         sx={{
                                             backgroundColor: isExpanded
                                                 ? ' #eaffc7'
                                                 : 'transparent',
                                             border: 'none',
-                                            gap: '13px',
+                                            gap: '11px',
                                             padding: '12px 6px',
                                             cursor: 'pointer',
                                             maxWidth: '230px',
@@ -84,6 +90,7 @@ const Navbar = () => {
                                             style={{
                                                 width: '16px',
                                                 height: '16px',
+                                                marginRight: '4px',
                                                 transform: isExpanded
                                                     ? 'rotate(180deg)'
                                                     : 'rotate(0deg)',
