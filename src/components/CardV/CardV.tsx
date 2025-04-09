@@ -17,7 +17,7 @@ import { BsBookmarkHeart, BsEmojiHeartEyes } from 'react-icons/bs';
 import { newRecipesCard } from '~/interfaces/interfaces';
 
 const CardV = (props: newRecipesCard) => {
-    const cardStyles = {
+    const cardVStyles = {
         borderRadius: '8px',
         border: '1px solid rgba(0, 0, 0, 0.08)',
         boxShadow: 'none',
@@ -48,7 +48,7 @@ const CardV = (props: newRecipesCard) => {
         background: 'none',
     };
     return (
-        <Card maxW='322px' sx={cardStyles}>
+        <Card maxW='322px' sx={cardVStyles}>
             <CardBody p={0}>
                 <Image src={props.img} alt={props.alt} />
                 <Stack p='16px 24px 27px' gap='8px'>

@@ -1,4 +1,5 @@
 import {
+    Button,
     Flex,
     FormControl,
     FormLabel,
@@ -12,10 +13,13 @@ import {
     SimpleGrid,
     Stack,
     Switch,
+    Text,
 } from '@chakra-ui/react';
-import { BsFilter, BsSearch } from 'react-icons/bs';
+import { BsArrowRight, BsFilter, BsSearch } from 'react-icons/bs';
 
+import CardH from '~/components/CardH/CardH';
 import CardV from '~/components/CardV/CardV';
+import { mostPopularData } from '~/data/mostPopular';
 import { newRecipesData } from '~/data/newRecipes';
 
 const HomePage = () => {
@@ -61,6 +65,26 @@ const HomePage = () => {
         color: 'rgba(0, 0, 0, 0.64)',
     };
 
+    const heading2Styles = {
+        fontFamily: 'Inter',
+        fontWeight: '500',
+        fontSize: '48px',
+        lineHeight: '90%',
+        letterSpacing: '2px',
+        color: '#000',
+    };
+
+    const buttonStyle = {
+        height: '48px',
+        padding: '0px 24px',
+        fontFamily: 'Inter',
+        fontWeight: '600',
+        fontSize: '18px',
+        lineHeight: '156%',
+        color: '#000',
+        background: '#b1ff2e',
+    };
+
     return (
         <>
             <Flex
@@ -68,7 +92,6 @@ const HomePage = () => {
                 flexDirection='column'
                 justifyContent='start'
                 alignItems='center'
-                gap='24px'
                 height='100%'
             >
                 <Stack
@@ -77,7 +100,7 @@ const HomePage = () => {
                     justifyContent='center'
                     maxW='898px'
                     w='100%'
-                    m='0 auto 32px'
+                    m='0 auto 56px'
                     gap='32px'
                 >
                     <Heading
@@ -135,17 +158,8 @@ const HomePage = () => {
                         </HStack>
                     </Stack>
                 </Stack>
-                <Stack className='new-recipes' w='100%'>
-                    <Heading
-                        as='h2'
-                        marginBottom='20px'
-                        fontFamily='Inter'
-                        fontWeight='500'
-                        fontSize='48px'
-                        lineHeight='90%'
-                        letterSpacing='2px'
-                        color='#000'
-                    >
+                <Stack className='new-recipes' w='100%' marginBottom='40px'>
+                    <Heading as='h2' sx={heading2Styles} marginBottom='20px'>
                         Новые рецепты
                     </Heading>
                     <SimpleGrid
@@ -154,6 +168,34 @@ const HomePage = () => {
                     >
                         {newRecipesData.map((element, index) => (
                             <CardV
+                                key={index}
+                                img={element.img}
+                                alt={element.alt}
+                                title={element.title}
+                                text={element.text}
+                                badgeText={element.badgeText}
+                                badgeIcon={element.badgeIcon}
+                                bookmarkCount={element.bookmarkCount}
+                                likeCount={element.likeCount}
+                            />
+                        ))}
+                    </SimpleGrid>
+                </Stack>
+                <Stack className='most-popular' w='100%' marginBottom='40px' gap='0'>
+                    <HStack justifyContent='space-between' alignItems='center' marginBottom='23px'>
+                        <Heading as='h2' sx={heading2Styles}>
+                            Самое сочное
+                        </Heading>
+                        <Button rightIcon={<BsArrowRight />} sx={buttonStyle}>
+                            <Text>Вся подборка</Text>
+                        </Button>
+                    </HStack>
+                    <SimpleGrid
+                        gap='24px'
+                        templateColumns='repeat(auto-fill, minmax(668px, 668px))'
+                    >
+                        {mostPopularData.map((element, index) => (
+                            <CardH
                                 key={index}
                                 img={element.img}
                                 alt={element.alt}

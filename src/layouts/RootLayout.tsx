@@ -23,7 +23,18 @@ const RootLayout = () => (
         >
             <Navbar />
         </GridItem>
-        <GridItem as='main' rowSpan={1} colSpan={1} maxW='1360px' w='100%' marginLeft='24px'>
+        <GridItem
+            as='main'
+            sx={{
+                overflowY: 'scroll',
+                scrollbarWidth: 'none',
+            }}
+            rowSpan={1}
+            colSpan={1}
+            maxW='1360px'
+            w='100%'
+            marginLeft='24px'
+        >
             <HomePage />
         </GridItem>
         <GridItem as='aside' rowSpan={1} colSpan={1}>
