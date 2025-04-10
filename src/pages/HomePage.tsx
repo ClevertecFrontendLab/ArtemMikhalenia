@@ -17,8 +17,10 @@ import {
 } from '@chakra-ui/react';
 import { BsArrowRight, BsFilter, BsSearch } from 'react-icons/bs';
 
+import CardBlog from '~/components/CardBlog/CardBlog';
 import CardH from '~/components/CardH/CardH';
 import CardV from '~/components/CardV/CardV';
+import { blogData } from '~/data/blogs';
 import { mostPopularData } from '~/data/mostPopular';
 import { newRecipesData } from '~/data/newRecipes';
 
@@ -74,6 +76,15 @@ const HomePage = () => {
         color: '#000',
     };
 
+    const heading3Styles = {
+        fontFamily: 'Inter',
+        fontWeight: '400',
+        fontSize: '36px',
+        lineHeight: '111%',
+        letterSpacing: '1px',
+        color: '#000',
+    };
+
     const buttonStyle = {
         height: '48px',
         padding: '0px 24px',
@@ -83,6 +94,17 @@ const HomePage = () => {
         lineHeight: '156%',
         color: '#000',
         background: '#b1ff2e',
+    };
+
+    const buttonBlogStyle = {
+        height: '48px',
+        padding: '0px 24px',
+        fontFamily: 'Inter',
+        fontWeight: '600',
+        fontSize: '18px',
+        lineHeight: '156%',
+        color: '#000',
+        background: 'none',
     };
 
     return (
@@ -158,7 +180,7 @@ const HomePage = () => {
                         </HStack>
                     </Stack>
                 </Stack>
-                <Stack className='new-recipes' w='100%' marginBottom='40px'>
+                <Stack className='new-recipes' w='100%' mb='40px'>
                     <Heading as='h2' sx={heading2Styles} marginBottom='20px'>
                         Новые рецепты
                     </Heading>
@@ -181,7 +203,7 @@ const HomePage = () => {
                         ))}
                     </SimpleGrid>
                 </Stack>
-                <Stack className='most-popular' w='100%' marginBottom='40px' gap='0'>
+                <Stack className='most-popular' w='100%' mb='40px' gap='0'>
                     <HStack justifyContent='space-between' alignItems='center' marginBottom='23px'>
                         <Heading as='h2' sx={heading2Styles}>
                             Самое сочное
@@ -207,6 +229,38 @@ const HomePage = () => {
                                 likeCount={element.likeCount}
                                 recAvatar={element.recAvatar}
                                 recName={element.recName}
+                            />
+                        ))}
+                    </SimpleGrid>
+                </Stack>
+                <Stack
+                    className='blogs'
+                    w='100%'
+                    mb='40px'
+                    p='20px 24px'
+                    bg='#c4ff61'
+                    borderRadius='16px'
+                    gap={0}
+                >
+                    <HStack justifyContent='space-between' alignItems='center' mb='24px'>
+                        <Heading as='h3' sx={heading3Styles}>
+                            Кулинарные блоги
+                        </Heading>
+                        <Button rightIcon={<BsArrowRight />} sx={buttonBlogStyle}>
+                            <Text>Все авторы</Text>
+                        </Button>
+                    </HStack>
+                    <SimpleGrid
+                        gap='16px'
+                        templateColumns='repeat(auto-fill, minmax(426px, 426px))'
+                    >
+                        {blogData.map((element, index) => (
+                            <CardBlog
+                                key={index}
+                                avatar={element.avatar}
+                                name={element.name}
+                                email={element.email}
+                                text={element.text}
                             />
                         ))}
                     </SimpleGrid>

@@ -21,3 +21,10 @@ export interface mostPopularCard {
     recAvatar: string;
     recName: string;
 }
+
+export interface blogCard {
+    avatar: string;
+    name: string;
+    email: string;
+    text: string;
+}
