@@ -205,6 +205,8 @@ const HomePage = () => {
                                 badgeIcon={element.badgeIcon}
                                 bookmarkCount={element.bookmarkCount}
                                 likeCount={element.likeCount}
+                                recAvatar={element.recAvatar}
+                                recName={element.recName}
                             />
                         ))}
                     </SimpleGrid>

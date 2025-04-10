@@ -18,4 +18,6 @@ export interface mostPopularCard {
     badgeIcon: string;
     bookmarkCount: number;
     likeCount: number;
+    recAvatar: string;
+    recName: string;
 }

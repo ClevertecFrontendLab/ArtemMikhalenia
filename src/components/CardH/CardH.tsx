@@ -1,5 +1,6 @@
 import {
     Badge,
+    Box,
     Button,
     ButtonGroup,
     Card,
@@ -16,9 +17,9 @@ import {
 } from '@chakra-ui/react';
 import { BsBookmarkHeart, BsEmojiHeartEyes } from 'react-icons/bs';
 
-import { newRecipesCard } from '~/interfaces/interfaces';
+import { mostPopularCard } from '~/interfaces/interfaces';
 
-const CardH = (props: newRecipesCard) => {
+const CardH = (props: mostPopularCard) => {
     const cardHStyles = {
         borderRadius: '8px',
         border: '1px solid rgba(0, 0, 0, 0.08)',
@@ -41,6 +42,25 @@ const CardH = (props: newRecipesCard) => {
         background: '#ffffd3',
     };
 
+    const imageBadgeStyles = {
+        position: 'absolute',
+        bottom: '20px',
+        left: '24px',
+        display: 'inline-flex',
+        gap: '8px',
+        alignItems: 'center',
+        padding: '2px 8px',
+        fontFamily: 'Inter',
+        fontWeight: '400',
+        fontSize: '14px',
+        lineHeight: '143%',
+        textTransform: 'capitalcase',
+        color: '#000',
+        borderRadius: '4px',
+        background: '#d7ff94',
+        zIndex: '10',
+    };
+
     const tagStyles = {
         padding: '4px',
         fontFamily: 'Inter',
@@ -52,7 +72,7 @@ const CardH = (props: newRecipesCard) => {
 
     const buttonStyles = {
         height: '32px',
-        padding: '6px 12px',
+        padding: '6px 11px',
         fontFamily: 'Inter',
         fontWeight: '600',
         fontSize: '14px',
@@ -67,7 +87,15 @@ const CardH = (props: newRecipesCard) => {
             overflow='hidden'
             variant='outline'
         >
-            <Image maxW='346px' src={props.img} alt={props.alt} />
+            <Box position='relative'>
+                <Image maxW='346px' src={props.img} alt={props.alt} />
+                {props.recName !== '' && (
+                    <Badge sx={imageBadgeStyles}>
+                        <Image width='16px' borderRadius='50%' src={props.recAvatar} />
+                        {props.recName} рекомендует
+                    </Badge>
+                )}
+            </Box>
             <Stack p='20px 24px' gap='0px'>
                 <CardBody p={0}>
                     <Stack p='0px 0px 24px' gap={0}>

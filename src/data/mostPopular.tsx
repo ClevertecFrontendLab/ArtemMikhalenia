@@ -1,5 +1,7 @@
 import { mostPopularCard } from '~/interfaces/interfaces';
 
+import alexCookImg from '../assets/img/avatars/alex-cook.jpg';
+import elenaVysotskayaImg from '../assets/img/avatars/elena-vysotskaya.jpg';
 import fryingPanImg from '../assets/img/icons/navbar/frying-pan.svg';
 import nationalImg from '../assets/img/icons/navbar/national.svg';
 import kneliImg from '../assets/img/most-popular/kneli.jpg';
@@ -17,6 +19,8 @@ export const mostPopularData: mostPopularCard[] = [
         badgeIcon: fryingPanImg,
         bookmarkCount: 85,
         likeCount: 152,
+        recAvatar: '',
+        recName: '',
     },
     {
         img: vetchinaImg,
@@ -27,6 +31,8 @@ export const mostPopularData: mostPopularCard[] = [
         badgeIcon: fryingPanImg,
         bookmarkCount: 159,
         likeCount: 257,
+        recAvatar: elenaVysotskayaImg,
+        recName: 'Елена Высоцкая',
     },
     {
         img: lapshaImg,
@@ -37,6 +43,8 @@ export const mostPopularData: mostPopularCard[] = [
         badgeIcon: fryingPanImg,
         bookmarkCount: 258,
         likeCount: 342,
+        recAvatar: alexCookImg,
+        recName: 'Alex Cook',
     },
     {
         img: tomYamImg,
@@ -47,5 +55,7 @@ export const mostPopularData: mostPopularCard[] = [
         badgeIcon: nationalImg,
         bookmarkCount: 124,
         likeCount: 324,
+        recAvatar: '',
+        recName: '',
     },
 ];
