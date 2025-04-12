@@ -14,14 +14,13 @@ import {
 } from '@chakra-ui/react';
 import { BsBookmarkHeart, BsEmojiHeartEyes } from 'react-icons/bs';
 
-import { badgeVStyles, cardVStyles, tagStyles } from '~/app/theme/styles';
-import { newRecipesCard } from '~/interfaces/interfaces';
+import { badgeStyles, cardVStyles, tagStyles } from '~/app/theme/styles';
+import { relevantCardV } from '~/interfaces/interfaces';
 
-const CardV = (props: newRecipesCard) => (
-    <Card maxW='322px' sx={cardVStyles}>
-        <CardBody p={0}>
-            <Image src={props.img} alt={props.alt} />
-            <Stack p='16px 24px 27px' gap='8px'>
+const RelevantCardV = (props: relevantCardV) => (
+    <Card maxW='322px' minH='192px' sx={cardVStyles}>
+        <CardBody p={0} w='100%' flex='0'>
+            <Stack p='24px 24px 28px' gap='8px'>
                 <Heading
                     fontFamily='Inter'
                     fontWeight='500'
@@ -46,7 +45,7 @@ const CardV = (props: newRecipesCard) => (
         </CardBody>
         <CardFooter w='100%' p={0}>
             <HStack w='100%' justifyContent='space-between' p='0px 24px 20px'>
-                <Badge sx={badgeVStyles}>
+                <Badge sx={badgeStyles}>
                     <Image width='16px' src={props.badgeIcon} />
                     {props.badgeText}
                 </Badge>
@@ -69,4 +68,4 @@ const CardV = (props: newRecipesCard) => (
     </Card>
 );
 
-export default CardV;
+export default RelevantCardV;

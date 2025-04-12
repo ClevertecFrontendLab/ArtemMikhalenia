@@ -13,30 +13,16 @@ import {
     SimpleGrid,
     Stack,
     Switch,
-    Text,
 } from '@chakra-ui/react';
-import { BsArrowRight, BsFilter, BsSearch } from 'react-icons/bs';
+import { BsFilter, BsSearch } from 'react-icons/bs';
 
-import {
-    buttonBlogStyle,
-    buttonStyle,
-    filterStyles,
-    heading2Styles,
-    heading3Styles,
-    inputStyles,
-    labelStyles,
-    selectStyles,
-} from '~/app/theme/styles';
-import CardBlog from '~/components/CardBlog/CardBlog';
+import { filterStyles, inputStyles, labelStyles, selectStyles } from '~/app/theme/styles';
 import CardH from '~/components/CardH/CardH';
-import CardV from '~/components/CardV/CardV';
 import RelevantBlock from '~/components/RelevantBlock/RelevantBlock';
-import { blogData } from '~/data/blogs';
-import { mostPopularData } from '~/data/mostPopularData';
-import { newRecipesData } from '~/data/newRecipes';
-import { relevantHomePageData } from '~/data/relevantData';
+import { mostPopularPageData } from '~/data/mostPopularData';
+import { relevantPopularPageData } from '~/data/relevantData';
 
-const HomePage = () => (
+const MostPopularPage = () => (
     <>
         <Flex
             padding='32px 0px'
@@ -51,7 +37,7 @@ const HomePage = () => (
                 justifyContent='center'
                 maxW='898px'
                 w='100%'
-                m='0 auto 56px'
+                m='0 auto 32px'
                 gap='32px'
             >
                 <Heading
@@ -68,7 +54,7 @@ const HomePage = () => (
                         color: '#000',
                     }}
                 >
-                    Приятного аппетита!
+                    Самое сочное
                 </Heading>
                 <Stack gap='16px' maxWidth='518px' w='100%'>
                     <HStack justifyContent='center' gap='12px'>
@@ -109,37 +95,14 @@ const HomePage = () => (
                     </HStack>
                 </Stack>
             </Stack>
-            <Stack className='new-recipes' w='100%' mb='40px'>
-                <Heading as='h2' sx={heading2Styles} marginBottom='20px'>
-                    Новые рецепты
-                </Heading>
-                <SimpleGrid gap='24px' templateColumns='repeat(auto-fill, minmax(322px, 322px))'>
-                    {newRecipesData.map((element, index) => (
-                        <CardV
-                            key={index}
-                            img={element.img}
-                            alt={element.alt}
-                            title={element.title}
-                            text={element.text}
-                            badgeText={element.badgeText}
-                            badgeIcon={element.badgeIcon}
-                            bookmarkCount={element.bookmarkCount}
-                            likeCount={element.likeCount}
-                        />
-                    ))}
-                </SimpleGrid>
-            </Stack>
-            <Stack className='most-popular' w='100%' mb='40px' gap='0'>
-                <HStack justifyContent='space-between' alignItems='center' marginBottom='23px'>
-                    <Heading as='h2' sx={heading2Styles}>
-                        Самое сочное
-                    </Heading>
-                    <Button rightIcon={<BsArrowRight />} sx={buttonStyle}>
-                        <Text>Вся подборка</Text>
-                    </Button>
-                </HStack>
-                <SimpleGrid gap='24px' templateColumns='repeat(auto-fill, minmax(668px, 668px))'>
-                    {mostPopularData.map((element, index) => (
+            <Stack w='100%' mb='40px' gap={0}>
+                <SimpleGrid
+                    columnGap='24px'
+                    rowGap='16px'
+                    templateColumns='repeat(auto-fill, minmax(668px, 668px))'
+                    mb='16px'
+                >
+                    {mostPopularPageData.map((element, index) => (
                         <CardH
                             key={index}
                             img={element.img}
@@ -155,39 +118,26 @@ const HomePage = () => (
                         />
                     ))}
                 </SimpleGrid>
+                <Button
+                    sx={{
+                        margin: '0 auto',
+                        maxW: '152px',
+                        borderRadius: '6px',
+                        padding: '0px 16px',
+                        background: '#b1ff2e',
+                        fontFamily: 'Inter',
+                        fontWeight: '600',
+                        fontSize: '16px',
+                        lineHeight: '150%',
+                        color: '#000',
+                    }}
+                >
+                    Загрузить еще
+                </Button>
             </Stack>
-            <Stack
-                className='blogs'
-                w='100%'
-                mb='40px'
-                p='20px 24px 26px'
-                bg='#c4ff61'
-                borderRadius='16px'
-                gap={0}
-            >
-                <HStack justifyContent='space-between' alignItems='center' mb='24px'>
-                    <Heading as='h3' sx={heading3Styles}>
-                        Кулинарные блоги
-                    </Heading>
-                    <Button rightIcon={<BsArrowRight />} sx={buttonBlogStyle}>
-                        <Text>Все авторы</Text>
-                    </Button>
-                </HStack>
-                <SimpleGrid gap='16px' templateColumns='repeat(auto-fill, minmax(426px, 426px))'>
-                    {blogData.map((element, index) => (
-                        <CardBlog
-                            key={index}
-                            avatar={element.avatar}
-                            name={element.name}
-                            email={element.email}
-                            text={element.text}
-                        />
-                    ))}
-                </SimpleGrid>
-            </Stack>
-            <RelevantBlock {...relevantHomePageData} />
+            <RelevantBlock {...relevantPopularPageData} />
         </Flex>
     </>
 );
 
-export default HomePage;
+export default MostPopularPage;

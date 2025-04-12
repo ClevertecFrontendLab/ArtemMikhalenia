@@ -1,9 +1,9 @@
 import { Grid, GridItem } from '@chakra-ui/react';
+import { Outlet } from 'react-router';
 
 import Header from '~/components/Header/Header';
 import Navbar from '~/components/Navbar/Navbar';
 import Sidebar from '~/components/Sidebar/Sidebar';
-import HomePage from '~/pages/HomePage';
 
 const RootLayout = () => (
     <Grid templateColumns='256px 1fr 208px ' templateRows='80px 1fr' w='100%' h='100vh'>
@@ -35,7 +35,7 @@ const RootLayout = () => (
             w='100%'
             marginLeft='24px'
         >
-            <HomePage />
+            <Outlet />
         </GridItem>
         <GridItem as='aside' rowSpan={1} colSpan={1}>
             <Sidebar />
