@@ -110,6 +110,11 @@ export const blogCardStyles = {
     border: '1px solid rgba(0, 0, 0, 0.08)',
     boxShadow: 'none',
     overflow: 'hidden',
+    cursor: 'pointer',
+    transition: 'all 0.5s ease 0s',
+    ':hover': {
+        boxShadow: '0 2px 4px -1px rgba(32, 126, 0, 0.06), 0 4px 6px -1px rgba(32, 126, 0, 0.1)',
+    },
 };
 
 export const headingStyles = {
@@ -142,6 +147,11 @@ export const cardHStyles = {
     border: '1px solid rgba(0, 0, 0, 0.08)',
     boxShadow: 'none',
     overflow: 'hidden',
+    cursor: 'pointer',
+    transition: 'all 0.5s ease 0s',
+    ':hover': {
+        boxShadow: '0 2px 4px -1px rgba(32, 126, 0, 0.06), 0 4px 6px -1px rgba(32, 126, 0, 0.1)',
+    },
 };
 
 export const badgeStyles = {
@@ -203,6 +213,11 @@ export const cardVStyles = {
     border: '1px solid rgba(0, 0, 0, 0.08)',
     boxShadow: 'none',
     overflow: 'hidden',
+    cursor: 'pointer',
+    transition: 'all 0.5s ease 0s',
+    ':hover': {
+        boxShadow: '0 2px 4px -1px rgba(32, 126, 0, 0.06), 0 4px 6px -1px rgba(32, 126, 0, 0.1)',
+    },
 };
 
 export const badgeVStyles = {
@@ -300,6 +315,11 @@ export const relevantCardHStyles = {
     boxShadow: 'none',
     overflow: 'hidden',
     padding: '11px 24px',
+    cursor: 'pointer',
+    transition: 'all 0.5s ease 0s',
+    ':hover': {
+        boxShadow: '0 2px 4px -1px rgba(32, 126, 0, 0.06), 0 4px 6px -1px rgba(32, 126, 0, 0.1)',
+    },
 };
 
 export const headingRelevantCardHStyles = {
