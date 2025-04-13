@@ -1,7 +1,7 @@
 import { Button, Container, Flex, Stack, Text } from '@chakra-ui/react';
-import { BsBookmarkHeart, BsEmojiHeartEyes, BsPencilSquare, BsPeopleFill } from 'react-icons/bs';
+import { BsPencilSquare } from 'react-icons/bs';
 
-import { buttonSidebarStyles, textSidebarStyles } from '~/app/theme/styles';
+import ProfileNotification from '../ProfileNotification/ProfileNotification';
 
 const Sidebar = () => (
     <>
@@ -12,17 +12,7 @@ const Sidebar = () => (
                 justifyContent='space-between'
                 h='100%'
             >
-                <Stack padding='16px 56px 16px 67px' gap='24px'>
-                    <Button sx={buttonSidebarStyles} leftIcon={<BsBookmarkHeart size='16px' />}>
-                        <Text sx={textSidebarStyles}>185</Text>
-                    </Button>
-                    <Button sx={buttonSidebarStyles} leftIcon={<BsPeopleFill size='16px' />}>
-                        <Text sx={textSidebarStyles}>589</Text>
-                    </Button>
-                    <Button sx={buttonSidebarStyles} leftIcon={<BsEmojiHeartEyes size='16px' />}>
-                        <Text sx={textSidebarStyles}>587</Text>
-                    </Button>
-                </Stack>
+                <ProfileNotification />
                 <Button
                     sx={{
                         height: '208px',

@@ -254,7 +254,6 @@ export const buttonFooterStyles = {
 
 //header styles
 export const headerStyles = {
-    p: '16px 80px 16px 16px',
     m: '0 auto',
     maxWidth: '1920px',
     width: '100%',
@@ -283,23 +282,10 @@ export const listItemStyle = {
 //sidebar styles
 export const textSidebarStyles = {
     fontFamily: 'Inter',
-    fontWeight: '600',
-    fontSize: '16px',
-    lineHeight: '150%',
     color: '#2db100',
 };
 
-export const buttonSidebarStyles = {
-    maxWidth: '87px',
-    width: '100%',
-    border: 'none',
-    bg: 'none',
-    alignItems: 'center',
-    cursor: 'pointer',
-};
-
 //relevant block styles
-
 export const textRelevantBlockStyles = {
     fontFamily: 'Inter',
     fontWeight: '500',

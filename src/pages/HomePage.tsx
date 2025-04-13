@@ -1,4 +1,5 @@
 import {
+    // Box,
     Button,
     Flex,
     FormControl,
@@ -15,7 +16,12 @@ import {
     Switch,
     Text,
 } from '@chakra-ui/react';
-import { BsArrowRight, BsFilter, BsSearch } from 'react-icons/bs';
+import {
+    // BsArrowLeft,
+    BsArrowRight,
+    BsFilter,
+    BsSearch,
+} from 'react-icons/bs';
 
 import {
     buttonBlogStyle,
@@ -29,11 +35,11 @@ import {
 } from '~/app/theme/styles';
 import CardBlog from '~/components/CardBlog/CardBlog';
 import CardH from '~/components/CardH/CardH';
-import CardV from '~/components/CardV/CardV';
+// import CardV from '~/components/CardV/CardV';
 import RelevantBlock from '~/components/RelevantBlock/RelevantBlock';
 import { blogData } from '~/data/blogs';
 import { mostPopularData } from '~/data/mostPopularData';
-import { newRecipesData } from '~/data/newRecipes';
+// import { newRecipesData } from '~/data/newRecipes';
 import { relevantHomePageData } from '~/data/relevantData';
 
 const HomePage = () => (
@@ -109,26 +115,57 @@ const HomePage = () => (
                     </HStack>
                 </Stack>
             </Stack>
-            <Stack className='new-recipes' w='100%' mb='40px'>
+            {/* <Stack className='new-recipes' w='100%' mb='40px'>
                 <Heading as='h2' sx={heading2Styles} marginBottom='20px'>
                     Новые рецепты
                 </Heading>
-                <SimpleGrid gap='24px' templateColumns='repeat(auto-fill, minmax(322px, 322px))'>
-                    {newRecipesData.map((element, index) => (
-                        <CardV
-                            key={index}
-                            img={element.img}
-                            alt={element.alt}
-                            title={element.title}
-                            text={element.text}
-                            badgeText={element.badgeText}
-                            badgeIcon={element.badgeIcon}
-                            bookmarkCount={element.bookmarkCount}
-                            likeCount={element.likeCount}
-                        />
-                    ))}
-                </SimpleGrid>
-            </Stack>
+                <Box sx={{ position: 'relative' }}>
+                    <SimpleGrid
+                        gap='24px'
+                        sx={{ overflowX: 'scroll', scrollbarWidth: 'none' }}
+                        templateColumns='repeat(4, minmax(277px, 322px))'
+                        templateRows='repeat(1, minmax(402px, 402px))'
+                    >
+                        {newRecipesData.map((element, index) => (
+                            <CardV
+                                key={index}
+                                img={element.img}
+                                alt={element.alt}
+                                title={element.title}
+                                text={element.text}
+                                badgeText={element.badgeText}
+                                badgeIcon={element.badgeIcon}
+                                bookmarkCount={element.bookmarkCount}
+                                likeCount={element.likeCount}
+                            />
+                        ))}
+                    </SimpleGrid>
+                    <Button
+                        sx={{
+                            position: 'absolute',
+                            top: '147px',
+                            left: '-8px',
+                            width: '48px',
+                            height: '48px',
+                            background: '#000',
+                        }}
+                    >
+                        <BsArrowLeft color='#ffffd3' />
+                    </Button>
+                    <Button
+                        sx={{
+                            position: 'absolute',
+                            top: '147px',
+                            right: '-8px',
+                            width: '48px',
+                            height: '48px',
+                            background: '#000',
+                        }}
+                    >
+                        <BsArrowRight color='#ffffd3' />
+                    </Button>
+                </Box>
+            </Stack> */}
             <Stack className='most-popular' w='100%' mb='40px' gap='0'>
                 <HStack justifyContent='space-between' alignItems='center' marginBottom='23px'>
                     <Heading as='h2' sx={heading2Styles}>
@@ -138,7 +175,11 @@ const HomePage = () => (
                         <Text>Вся подборка</Text>
                     </Button>
                 </HStack>
-                <SimpleGrid gap='24px' templateColumns='repeat(auto-fill, minmax(668px, 668px))'>
+                <SimpleGrid
+                    gap='24px'
+                    gridAutoFlow='row dense'
+                    templateColumns='repeat(auto-fill, minmax(668px, 1fr))'
+                >
                     {mostPopularData.map((element, index) => (
                         <CardH
                             key={index}

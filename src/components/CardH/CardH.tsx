@@ -28,9 +28,9 @@ import { mostPopularCard } from '~/interfaces/interfaces';
 
 const CardH = (props: mostPopularCard) => (
     <Card
-        maxW='668px'
+        maxW={{ l: '880px', xl: '668px' }}
         sx={cardHStyles}
-        direction={{ base: 'column', sm: 'row' }}
+        direction={{ sm: 'column', xl: 'row' }}
         overflow='hidden'
         variant='outline'
     >
@@ -43,7 +43,7 @@ const CardH = (props: mostPopularCard) => (
                 </Badge>
             )}
         </Box>
-        <Stack p='20px 24px' gap='0px'>
+        <Stack p='20px 24px' gap='0px' w={{ xl: '100%' }}>
             <CardBody p={0}>
                 <Stack p='0px 0px 24px' gap={0}>
                     <HStack w='100%' justifyContent='space-between' p='0px 0px 24px'>
